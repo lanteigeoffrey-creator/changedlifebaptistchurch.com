@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Changed Life Baptist Church</title>
+<meta name="description" content="Photos from Changed Life Baptist Church's Golden Jubilee celebrations — worship, choir ministrations and fellowship at Life Cathedral.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .gallery-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .gallery-item{ position:relative; overflow:hidden; background: var(--ink); aspect-ratio: 4/3; cursor:pointer; }
+  .gallery-item img{ width:100%; height:100%; object-fit:cover; transition: transform .5s ease; display:block; }
+  .gallery-item:hover img{ transform: scale(1.05); }
+  .gallery-item .cap{
+    position:absolute; left:0; right:0; bottom:0;
+    padding: 16px 18px;
+    background: linear-gradient(0deg, rgba(0,0,0,.72), transparent);
+    color:#fff; font-size:.92rem; font-weight:600;
+  }
+  .gallery-item.tall{ grid-row: span 2; aspect-ratio: auto; }
+  @media (max-width: 900px){ .gallery-grid{ grid-template-columns: repeat(2,1fr); } .gallery-item.tall{ grid-row: span 1; aspect-ratio: 4/3; } }
+  @media (max-width: 560px){ .gallery-grid{ grid-template-columns: 1fr; } }
+
+  .lightbox{
+    position:fixed; inset:0; z-index:1000; background: rgba(10,12,15,.94);
+    display:none; align-items:center; justify-content:center; padding: 40px;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox img{ max-width:min(1100px, 92vw); max-height:82vh; object-fit:contain; }
+  .lightbox .cap{ position:absolute; bottom:36px; left:0; right:0; text-align:center; color:#fff; font-size:.95rem; }
+  .lightbox .close{ position:absolute; top:24px; right:28px; color:#fff; font-size:1.6rem; background:none; border:none; cursor:pointer; line-height:1; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="Changed Life Baptist Church crest">
+      <span class="brand-word">Changed Life<br>Baptist Church<small>A Changed Life For Christ</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="branches.html">Branches</a></li>
+      <li><a href="campus.html">Campus Fellowships</a></li>
+      <li><a href="ministries.html">Ministries</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="sermons.html">Sermons &amp; Live</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html#give" class="btn btn-outline">Give</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> / Gallery</div>
+    <h1>Moments from the family album.</h1>
+    <p class="lede">Worship, celebration and fellowship from around Changed Life Baptist Church — including scenes from our Golden Jubilee year.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="gallery-grid">
+
+      <div class="gallery-item tall" data-caption="Golden Jubilee Celebration">
+        <img src="assets/gallery/celebration-dance.jpg" alt="Golden Jubilee Celebration">
+        <div class="cap">Golden Jubilee Celebration</div>
+      </div>
+
+      <div class="gallery-item" data-caption="Praise and Worship Team">
+        <img src="assets/gallery/praise-team.jpg" alt="Praise and Worship Team">
+        <div class="cap">Praise and Worship Team</div>
+      </div>
+
+      <div class="gallery-item" data-caption="A Moment of Worship">
+        <img src="assets/gallery/pastor-worship.jpg" alt="A Moment of Worship">
+        <div class="cap">A Moment of Worship</div>
+      </div>
+
+      <div class="gallery-item" data-caption="Choir Ministration">
+        <img src="assets/gallery/choir-ministration.jpg" alt="Choir Ministration">
+        <div class="cap">Choir Ministration</div>
+      </div>
+
+      <div class="gallery-item" data-caption="Sunday Congregation">
+        <img src="assets/gallery/congregation.jpg" alt="Sunday Congregation">
+        <div class="cap">Sunday Congregation</div>
+      </div>
+
+      <div class="gallery-item" data-caption="Hearts Lifted in Worship">
+        <img src="assets/gallery/hands-lifted.jpg" alt="Hearts Lifted in Worship">
+        <div class="cap">Hearts Lifted in Worship</div>
+      </div>
+
+      <div class="gallery-item" data-caption="Fellowship Among Members">
+        <img src="assets/gallery/fellowship-members.jpg" alt="Fellowship Among Members">
+        <div class="cap">Fellowship Among Members</div>
+      </div>
+
+    </div>
+
+    <div class="embed-note" style="margin-top:34px; max-width:60em;">
+      More photos from branches, campus fellowships and ministry events can be added here over time — send them in through the <a href="contact.html" style="text-decoration:underline;">contact page</a>.
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Want to be part of the next photo?</h2>
+    <a href="branches.html" class="btn" style="background:#fff; color:var(--flame);">Join us this Sunday</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo.png" alt="CLBC crest">
+        <p>A network of Baptist churches across Ghana, growing disciples of Jesus Christ since 1976.</p>
+        <div class="social-row" style="margin-top:18px;">
+          <a href="https://www.facebook.com/profile.php?id=100066663400036" aria-label="Facebook">f</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="sermons.html#podcast" aria-label="Podcast">🎙</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+      <div><h5>Explore</h5><ul>
+        <li><a href="about.html">Our story</a></li>
+        <li><a href="branches.html">Branches</a></li>
+        <li><a href="campus.html">Campus fellowships</a></li>
+        <li><a href="ministries.html">Ministries</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul></div>
+      <div><h5>Connect</h5><ul>
+        <li><a href="sermons.html">Sermons &amp; live</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="contact.html#give">Give</a></li>
+        <li><a href="about.html#leadership">Leadership</a></li>
+      </ul></div>
+      <div><h5>Mother church</h5><ul>
+        <li>Life Cathedral</li>
+        <li>North Kaneshie, Accra</li>
+        <li>Greater Accra Region, Ghana</li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Changed Life Baptist Church. Celebrating 50 years, 1976–2026.</span>
+      <span>www.changedlifebaptistchurch.com</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="close" id="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+  <div class="cap" id="lightbox-cap"></div>
+</div>
+
+<script src="assets/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var lb = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lightbox-img');
+    var lbCap = document.getElementById('lightbox-cap');
+    document.querySelectorAll('.gallery-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var img = item.querySelector('img');
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCap.textContent = item.getAttribute('data-caption') || '';
+        lb.classList.add('open');
+      });
+    });
+    document.getElementById('lightbox-close').addEventListener('click', function () {
+      lb.classList.remove('open');
+      lbImg.src = '';
+    });
+    lb.addEventListener('click', function (e) {
+      if (e.target === lb) { lb.classList.remove('open'); lbImg.src = ''; }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { lb.classList.remove('open'); lbImg.src = ''; }
+    });
+  });
+</script>
+</body>
+</html>
